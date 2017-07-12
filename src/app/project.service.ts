@@ -25,10 +25,10 @@ export class ProjectService {
     // topProjects.subscribe(data => console.log(data));
   }
 
-  // addProject(newAlbum: Album) {
-  //   this.albums.push(newAlbum);
-  // }
-  //
+  addProject(newProject: Project) {
+    this.projects.push(newProject);
+  }
+
   getProjectById(projectId: string){
     return this.database.object('projects/' + projectId);
   }

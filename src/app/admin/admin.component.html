@@ -1,26 +1,54 @@
 <div class="panel panel-default">
   <div class="panel-heading">
-    <h3 class="panel-title">Add New Project to Inventory</h3>
+    <h3 class="panel-title">Add New Project to Marketplace</h3>
   </div>
   <div class="panel-body">
     <div>
       <div>
-        <label>Album Title:</label>
+        <label>Project Name:</label>
         <br>
-        <input #newTitle>
+        <input #newName>
       </div>
 
       <div>
-        <label>Album Artist:</label>
+        <label>Project Manager(s):</label>
         <br>
-        <input #newArtist>
+        <input #newManager>
       </div>
 
       <div>
-        <label>Album Description:</label>
+        <label>Project Description:</label>
         <br>
         <textarea #newDescription></textarea>
       </div>
+
+      <div>
+        <label>Project Goal:</label>
+        <br>
+        <input #newGoal placeholder="$">
+      </div>
+
+      <div>
+        <label>Project Plan:</label>
+        <br>
+        <textarea #newPlan></textarea>
+      </div>
+
+      <div>
+        <h3>Project Reward Tiers:</h3>
+        <div>
+          <label>First Tier pledge amount:</label>
+          <br>
+          <input #newTier1Amount placeholder="$">
+          <br>
+          <label>First Tier Reward</label>
+          <br>
+          <textarea #newTier1Reward></textarea>
+        </div>
+      </div>
+
+
+
       <button (click)="submitForm(newTitle.value, newArtist.value, newDescription.value); newTitle.value=''; newArtist.value=''; newDescription.value=''">Add</button>
     </div>
   </div>
