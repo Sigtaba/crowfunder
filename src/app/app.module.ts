@@ -11,6 +11,7 @@ import { routing } from './app.routing';
 import { MarketplaceComponent } from './marketplace/marketplace.component';
 import { ProjectDetailComponent } from './project-detail/project-detail.component';
 import { AdminComponent } from './admin/admin.component';
+import { ReversePipe } from './reverse-pipe.pipe';
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -25,7 +26,8 @@ export const firebaseConfig = {
     HomepageComponent,
     MarketplaceComponent,
     ProjectDetailComponent,
-    AdminComponent
+    AdminComponent,
+    ReversePipe
   ],
   imports: [
     BrowserModule,

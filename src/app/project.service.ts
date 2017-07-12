@@ -15,7 +15,12 @@ export class ProjectService {
   }
 
   getTopProjects() {
-    return this.database.list('/projects', {query: {limitToLast: 4,}});
+    return this.database.list('/projects', {
+      query: {
+        orderByChild: 'supporters',
+        limitToLast: 4,
+      }
+    });
 
     // topProjects.subscribe(data => console.log(data));
   }

@@ -1,4 +1,4 @@
-<div *ngFor="let project of projects | async" class="panel panel-default">
+<div *ngFor="let project of projects | async | reverse" class="panel panel-default">
   <div class="panel-body">
     <h3><em>{{project.name}}</em>, {{project.description}}, ${{project.goal}} goal</h3>
   </div>
