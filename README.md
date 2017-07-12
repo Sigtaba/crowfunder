@@ -2,6 +2,18 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.0.
 
+### Specs
+| Behavior | Example Input | Example Output |
+| :-------------     | :------------- | :------------- |
+| **Homepage with list of Things Seeking Funding(TSF)** | Homepage | List of TSF |
+| **View individual TSF details** | Click on individual TSF | Individual TSF info |
+| **User can filter TSF** | User filters TSF by: tags, amount of money (still) needed, minimum donation, type of project | List of projects within filter parameters |
+| **User can fund project** | Click button | Form for donation |
+| **Post new project** | Clicks button | Form for new project creation |
+| **Admin Functionality: add/update/delete projects** | Admin button | Admin view |
+| **User can view separate pages for each type of project** | User navigates to view all Startups | View with list of all startup-type projects |
+
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
