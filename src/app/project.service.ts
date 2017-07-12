@@ -15,16 +15,16 @@ export class ProjectService {
   }
 
   getTopProjects() {
-    // const topProjects = firebase.database().ref('projects/').orderByChild('supporters');
-    // return topProjects.limitToLast(4);
-    // return this.database.list(`projects/`);
+    return this.database.list('/projects', {query: {limitToLast: 4,}});
+
+    // topProjects.subscribe(data => console.log(data));
   }
 
-  // addAlbum(newAlbum: Album) {
+  // addProject(newAlbum: Album) {
   //   this.albums.push(newAlbum);
   // }
   //
-  // getAlbumById(albumId: string){
-  //   return this.database.object('albums/' + albumId);
-  // }
+  getProjectById(projectId: string){
+    return this.database.object('projects/' + projectId);
+  }
 }

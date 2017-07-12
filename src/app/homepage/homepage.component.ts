@@ -13,7 +13,7 @@ import { FirebaseListObservable } from 'angularfire2/database';
 
 export class HomepageComponent implements OnInit {
 
-  projects;
+  projects: FirebaseListObservable<any[]>;
 
   constructor(private router: Router, private projectService: ProjectService) {}
 
@@ -23,7 +23,7 @@ export class HomepageComponent implements OnInit {
   }
 
 
-  // goToDetailPage(clickedAlbum) {
-  //   // this.router.navigate(['albums', clickedAlbum.$key]);
-  // };
+  goToDetailPage(clickedProject) {
+    this.router.navigate(['projects', clickedProject.$key]);
+  };
 }
