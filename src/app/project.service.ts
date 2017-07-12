@@ -15,8 +15,8 @@ export class ProjectService {
   }
 
   getTopProjects() {
-    const topProjects = firebase.database().ref('projects/').orderByChild('supporters');
-    return topProjects.limitToLast(4);
+    // const topProjects = firebase.database().ref('projects/').orderByChild('supporters');
+    // return topProjects.limitToLast(4);
     // return this.database.list(`projects/`);
   }
 
