@@ -1,6 +1,19 @@
 <h2>Marketplace</h2>
 
-<div *ngFor="let project of projects | async" class="panel panel-default">
+<select (change)="onChange($event.target.value)">
+  <option value="allProjects" selected="selected">All Projects</option>
+  <option value="animals">Animals</option>
+  <option value="art">Art</option>
+  <option value="health">Health</option>
+  <option value="home">Home</option>
+  <option value="kids">Kids</option>
+  <option value="recreation">Recreation</option>
+  <option value="social">Social</option>
+  <option value="recreation">Technology</option>
+  <option value="social">Transportation</option>
+</select>
+
+<div *ngFor="let project of projects | async | tagged:filterByTagged" class="panel panel-default">
   <div class="panel-body">
     <h3><em>{{project.name}}</em>, {{project.description}}, ${{project.goal}} goal</h3>
     <div *ngIf="currentRoute === '/admin'">
