@@ -22,7 +22,7 @@
 
 <div *ngFor="let tier of tiers">
   <label>New Project Tier:</label>
-  <input [(ngModel)]="tier.pledge">
+  <input [(ngModel)]="tier.pledge" typer="number">
   <input [(ngModel)]="tier.reward">
   <input [(ngModel)]="tier.limit">
   <br>

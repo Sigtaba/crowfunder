@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Project } from './project.model';
-import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
+import { AngularFireDatabase, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2/database';
 
 @Injectable()
 export class ProjectService {
@@ -42,7 +42,18 @@ export class ProjectService {
                                 plan: localUpdatedProject.plan,
                                 tiers: localUpdatedProject.tiers,
                                 type: localUpdatedProject.type,
-                                tag: localUpdatedProject.tag                    });
+                                tag: localUpdatedProject.tag
+                              });
+  }
+
+  sellTier(localSoldProject, tierCost: number) {
+    var projectEntryInFirebase = this.getProjectById(localSoldProject.$key);
+    var supporters = parseFloat(localSoldProject.supporters) + 1;
+    var moneyRaised = parseFloat(localSoldProject.amountRaised) + tierCost;
+    projectEntryInFirebase.update({supporters: supporters,
+                                  amountRaised: moneyRaised
+                              });
+
   }
 
   deleteProject(localProjectToDelete){
