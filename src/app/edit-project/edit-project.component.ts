@@ -17,9 +17,10 @@ export class EditProjectComponent implements OnInit {
   constructor(private projectService: ProjectService) { }
 
   ngOnInit() {
+    console.log(this.selectedProject.tiers);
     this.tiers = this.selectedProject.tiers;
+    }
     //so this doesn't work in the html...womp womp
-  }
 
   beginUpdatingProject(projectToUpdate){
     this.projectService.updateProject(projectToUpdate);

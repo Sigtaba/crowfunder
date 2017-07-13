@@ -23,7 +23,7 @@ export class MarketplaceComponent implements OnInit {
 
   goToDetailPage(clickedProject) {
     this.router.navigate(['projects', clickedProject.$key]);
-  };
+  }
 
   filterByTagged: string = "allProjects";
 

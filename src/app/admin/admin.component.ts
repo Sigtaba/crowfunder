@@ -21,8 +21,8 @@ export class AdminComponent implements OnInit {
   }
   tierArray = [];
 
-  submitForm(name: string, manager: string, description: string, goal: number, plan: string, tierAmount: number, tierReward: string, type: string, tag: string) {
-    var newTier: Tier = new Tier(tierAmount, tierReward);
+  submitForm(name: string, manager: string, description: string, goal: number, plan: string, tierAmount: number, tierReward: string, tierLimit: number, type: string, tag: string) {
+    var newTier: Tier = new Tier(tierAmount, tierReward, tierLimit);
     this.tierArray.push(newTier);
     var newProject: Project = new Project(name, manager, description, goal, plan, this.tierArray, type, tag);
     this.projectService.addProject(newProject);

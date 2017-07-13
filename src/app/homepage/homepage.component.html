@@ -1,5 +1,7 @@
 <div *ngFor="let project of projects | async | reverse" class="panel panel-default">
   <div class="panel-body">
-    <h3><em>{{project.name}}</em>, {{project.description}}, ${{project.goal}} goal</h3>
+    <h3><strong>{{project.name}}</strong></h3>
+    <h4>${{project.goal}} goal</h4>
+    <h4>{{project.description}}</h4>
   </div>
 </div>

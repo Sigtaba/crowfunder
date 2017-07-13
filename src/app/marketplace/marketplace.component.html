@@ -10,12 +10,14 @@
   <option value="recreation">Recreation</option>
   <option value="social">Social</option>
   <option value="recreation">Technology</option>
-  <option value="social">Transportation</option>
+  <option value="transportation">Transportation</option>
 </select>
 
 <div *ngFor="let project of projects | async | tagged:filterByTagged" class="panel panel-default">
   <div class="panel-body">
-    <h3><em>{{project.name}}</em>, {{project.description}}, ${{project.goal}} goal</h3>
+    <h3 (click)="goToDetailPage(project)"><strong>{{project.name}}</strong></h3>
+    <h4>${{project.goal}} goal</h4>
+    <h4>{{project.description}}</h4>
     <div *ngIf="currentRoute === '/admin'">
       <app-edit-project [selectedProject]="project"></app-edit-project>
     </div>

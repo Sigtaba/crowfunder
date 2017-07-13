@@ -20,20 +20,40 @@
 <input [(ngModel)]="selectedProject.plan">
 <br>
 
-<div *ngFor="let tier of tiers | async">
+<div *ngFor="let tier of tiers">
   <label>New Project Tier:</label>
   <input [(ngModel)]="tier.pledge">
   <input [(ngModel)]="tier.reward">
+  <input [(ngModel)]="tier.limit">
   <br>
 </div>
 
-<label>New Project Type:</label>
-<input [(ngModel)]="selectedProject.type">
-<br>
+<div>
+  <label>Type:</label>
+  <br>
+  <select [(ngModel)]="selectedProject.type">
+    <option value="charity">Charity</option>
+    <option value="startup">Startup</option>
+  </select>
+</div>
 
-<label>New Project Tag:</label>
-<input [(ngModel)]="selectedProject.tag">
-<br>
+<div>
+  <label>Tag:</label>
+  <br>
+  <select [(ngModel)]="selectedProject.tag">
+    <option value="animals">Animals</option>
+    <option value="art">Art</option>
+    <option value="health">Health</option>
+    <option value="home">Home</option>
+    <option value="kids">Kids</option>
+    <option value="recreation">Recreation</option>
+    <option value="social">Social</option>
+    <option value="technology">Technology</option>
+    <option value="transportation">Transportation</option>
+  </select>
+</div>
+
+
 
 <button (click)="beginUpdatingProject(selectedProject)">Update</button>
 <button (click)="beginDeletingProject(selectedProject)">Delete</button>

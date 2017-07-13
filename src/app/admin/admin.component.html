@@ -44,6 +44,10 @@
           <label>First Tier Reward</label>
           <br>
           <textarea #newTier1Reward></textarea>
+          <br>
+          <label>First Tier pledge limit:</label>
+          <br>
+          <input #newTier1Limit type="number" placeholder="Enter availability of tier">
         </div>
       </div>
 
@@ -73,7 +77,7 @@
       </div>
 
 
-      <button (click)="submitForm(newName.value, newManager.value, newDescription.value, newGoal.value, newPlan.value, newTier1Amount.value, newTier1Reward.value, newType.value, newTag.value); newName.value=''; newManager.value=''; newDescription.value=''; newGoal.value=''; newPlan.value=''; newTier1Amount.value=''; newTier1Reward.value=''; newType.value=''; newTag.value=''">Add</button>
+      <button (click)="submitForm(newName.value, newManager.value, newDescription.value, newGoal.value, newPlan.value, newTier1Amount.value, newTier1Reward.value, newTier1Limit.value, newType.value, newTag.value); newName.value=''; newManager.value=''; newDescription.value=''; newGoal.value=''; newPlan.value=''; newTier1Amount.value=''; newTier1Reward.value=''; newTier1Limit.value=''; newType.value=''; newTag.value=''">Add</button>
     </div>
   </div>
 </div>
