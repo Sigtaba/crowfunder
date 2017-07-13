@@ -1,17 +1,19 @@
 
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" routerLink="">PunchEnder</a>
-    </div>
-    <ul class="nav navbar-nav navbar-right">
-      <li><a routerLink="marketplace">Marketplace</a></li>
-      <li><a routerLink="admin">Admin</a></li>
-      <li><a routerLink="newProject">Add Project</a></li>
-    </ul>
+<div class="navbar">
+  <div class="navbar-header">
+    <a class="navbar-brand" routerLink="">PunchEnder</a>
   </div>
-</nav>
+  <ul>
+    <li><a routerLink="marketplace">Marketplace</a></li>
+    <li><a routerLink="admin">Admin</a></li>
+    <li><a routerLink="newProject">Add Project</a></li>
+  </ul>
+</div>
 <div class="container">
-  <h1>{{title}}</h1>
+  <div class="header">
+    <div class="header-opaque">
+      <h1>{{title}}</h1>
+    </div>
+  </div>
   <router-outlet></router-outlet>
 </div>

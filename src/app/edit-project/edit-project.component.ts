@@ -8,7 +8,7 @@ import { Tier } from '../tier.model';
 @Component({
   selector: 'app-edit-project',
   templateUrl: './edit-project.component.html',
-  styleUrls: ['./edit-project.component.css'],
+  styleUrls: ['./edit-project.component.sass'],
   providers: [ProjectService]
 })
 export class EditProjectComponent implements OnInit {

@@ -1,7 +1,24 @@
-<div *ngFor="let project of projects | async | reverse" class="panel panel-default">
-  <div class="panel-body">
-    <h3 (click)="goToDetailPage(project)"><strong>{{project.name}}</strong></h3>
-    <h4>${{project.goal}} goal</h4>
-    <h4>{{project.description}}</h4>
+<div class="top4container">
+  <div *ngFor="let project of projects | async | reverse" class="top4">
+    <div class="box">
+      <h3 (click)="goToDetailPage(project)"><strong>{{project.name}}</strong></h3>
+      <h4>${{project.goal}} goal</h4>
+      <h4>{{project.description}}</h4>
+    </div>
+  </div>
+</div>
+<div class="about">
+  <h1>About</h1>
+  <div class="profiles">
+    <div class="isabella profile">
+      <h3>Isabella</h3>
+      <img src="../../assets/img/isabella.jpg" alt="A picture of Isabella">
+      <p>Here is the content about Isabella</p>
+    </div>
+    <div class="marilyn profile">
+      <h3>Marilyn</h3>
+      <img src="../../assets/img/marilyn.jpg" alt="A picture of Marilyn">
+      <p>Here is the content about Marilyn</p>
+    </div>
   </div>
 </div>

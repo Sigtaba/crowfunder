@@ -9,7 +9,7 @@ import { Tier } from '../tier.model';
 @Component({
   selector: 'app-project-detail',
   templateUrl: './project-detail.component.html',
-  styleUrls: ['./project-detail.component.css'],
+  styleUrls: ['./project-detail.component.sass'],
   providers: [ProjectService]
 })
 export class ProjectDetailComponent implements OnInit {

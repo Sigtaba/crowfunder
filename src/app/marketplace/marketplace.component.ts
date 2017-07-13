@@ -7,7 +7,7 @@ import { FirebaseListObservable } from 'angularfire2/database';
 @Component({
   selector: 'app-marketplace',
   templateUrl: './marketplace.component.html',
-  styleUrls: ['./marketplace.component.css'],
+  styleUrls: ['./marketplace.component.sass'],
   providers: [ProjectService]
 })
 
