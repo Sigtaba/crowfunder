@@ -47,9 +47,37 @@
         </div>
       </div>
 
+      <div>
+        <label>Type:</label>
+        <br>
+        <select #newType>
+          <option value="charity">Charity</option>
+          <option value="startup">Startup</option>
+        </select>
+      </div>
+
+      <div>
+        <label>Tag:</label>
+        <br>
+        <select #newTag>
+          <option value="animals">Animals</option>
+          <option value="art">Art</option>
+          <option value="health">Health</option>
+          <option value="home">Home</option>
+          <option value="kids">Kids</option>
+          <option value="recreation">Recreation</option>
+          <option value="social">Social</option>
+          <option value="technology">Technology</option>
+          <option value="transportation">Transportation</option>
+        </select>
+      </div>
 
 
-      <button (click)="submitForm(newTitle.value, newArtist.value, newDescription.value); newTitle.value=''; newArtist.value=''; newDescription.value=''">Add</button>
+      <button (click)="submitForm(newName.value, newManager.value, newDescription.value, newGoal.value, newPlan.value, newTier1Amount.value, newTier1Reward.value, newType.value, newTag.value); newName.value=''; newManager.value=''; newDescription.value=''; newGoal.value=''; newPlan.value=''; newTier1Amount.value=''; newTier1Reward.value=''; newType.value=''; newTag.value=''">Add</button>
     </div>
   </div>
+</div>
+
+<div>
+  <app-marketplace></app-marketplace>
 </div>

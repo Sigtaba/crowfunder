@@ -1,7 +1,10 @@
 <h2>Marketplace</h2>
 
-<div *ngFor="let project of projects | async" (click)="goToDetailPage(project)" class="panel panel-default">
+<div *ngFor="let project of projects | async" class="panel panel-default">
   <div class="panel-body">
     <h3><em>{{project.name}}</em>, {{project.description}}, ${{project.goal}} goal</h3>
+    <div *ngIf="currentRoute === '/admin'">
+      <app-edit-project [selectedProject]="project"></app-edit-project>
+    </div>
   </div>
 </div>

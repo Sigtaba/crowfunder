@@ -12,6 +12,7 @@ import { MarketplaceComponent } from './marketplace/marketplace.component';
 import { ProjectDetailComponent } from './project-detail/project-detail.component';
 import { AdminComponent } from './admin/admin.component';
 import { ReversePipe } from './reverse-pipe.pipe';
+import { EditProjectComponent } from './edit-project/edit-project.component';
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -27,7 +28,8 @@ export const firebaseConfig = {
     MarketplaceComponent,
     ProjectDetailComponent,
     AdminComponent,
-    ReversePipe
+    ReversePipe,
+    EditProjectComponent
   ],
   imports: [
     BrowserModule,

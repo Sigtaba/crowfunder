@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ProjectService } from '../project.service';
 import { Project } from '../project.model';
 import { Tier } from '../tier.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-admin',
@@ -12,15 +13,20 @@ import { Tier } from '../tier.model';
 
 export class AdminComponent implements OnInit {
 
-  constructor(private projectService: ProjectService) { }
+  constructor(private router: Router,
+    private projectService: ProjectService) { }
 
   ngOnInit() {
 
   }
+  tierArray = [];
 
-  submitForm(name: string, manager: string, description: string, goal: number, plan: string, tiers: Tier[], type: string, tag: string) {
-    var newProject: Project = new Project(name, manager, description, goal, plan, tiers, type, tag);
+  submitForm(name: string, manager: string, description: string, goal: number, plan: string, tierAmount: number, tierReward: string, type: string, tag: string) {
+    var newTier: Tier = new Tier(tierAmount, tierReward);
+    this.tierArray.push(newTier);
+    var newProject: Project = new Project(name, manager, description, goal, plan, this.tierArray, type, tag);
     this.projectService.addProject(newProject);
+    this.router.navigate(['marketplace']);
   }
 
 }

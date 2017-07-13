@@ -32,4 +32,16 @@ export class ProjectService {
   getProjectById(projectId: string){
     return this.database.object('projects/' + projectId);
   }
+
+  updateProject(localUpdatedProject){
+    var projectEntryInFirebase = this.getProjectById(localUpdatedProject.$key);
+    projectEntryInFirebase.update({name: localUpdatedProject.name,
+                                manager: localUpdatedProject.manager,
+                                description: localUpdatedProject.description,
+                                goal: localUpdatedProject.goal,
+                                plan: localUpdatedProject.plan,
+                                tiers: localUpdatedProject.tiers,
+                                type: localUpdatedProject.type,
+                                tag: localUpdatedProject.tag                    });
+  }
 }

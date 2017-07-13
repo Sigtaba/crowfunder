@@ -1,0 +1,38 @@
+<h4>Edit Project</h4>
+
+<label>New Project Name:</label>
+<input [(ngModel)]="selectedProject.name">
+<br>
+
+<label>New Project Manager:</label>
+<input [(ngModel)]="selectedProject.manager">
+<br>
+
+<label>New Project Description:</label>
+<input [(ngModel)]="selectedProject.description">
+<br>
+
+<label>New Project Goal:</label>
+<input [(ngModel)]="selectedProject.goal">
+<br>
+
+<label>New Project Plan:</label>
+<input [(ngModel)]="selectedProject.plan">
+<br>
+
+<div *ngFor="let tier of tiers | async">
+  <label>New Project Tier:</label>
+  <input [(ngModel)]="tier.pledge">
+  <input [(ngModel)]="tier.reward">
+  <br>
+</div>
+
+<label>New Project Type:</label>
+<input [(ngModel)]="selectedProject.type">
+<br>
+
+<label>New Project Tag:</label>
+<input [(ngModel)]="selectedProject.tag">
+<br>
+
+<button (click)="beginUpdatingProject(selectedProject)">Update</button>
