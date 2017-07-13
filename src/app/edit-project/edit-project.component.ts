@@ -3,6 +3,8 @@ import { Project } from '../project.model';
 import { ProjectService } from '../project.service';
 import { Tier } from '../tier.model';
 
+
+
 @Component({
   selector: 'app-edit-project',
   templateUrl: './edit-project.component.html',
@@ -17,8 +19,8 @@ export class EditProjectComponent implements OnInit {
   constructor(private projectService: ProjectService) { }
 
   ngOnInit() {
-    console.log(this.selectedProject.tiers);
-    this.tiers = this.selectedProject.tiers;
+    this.projectService.getProjectTiers(this.selectedProject.$key).subscribe(data => this.tiers = data);
+
     }
     //so this doesn't work in the html...womp womp
 
