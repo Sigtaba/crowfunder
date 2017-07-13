@@ -3,11 +3,13 @@
   <h4>{{(projectToDisplay | async)?.manager}}</h4>
   <p>{{(projectToDisplay | async)?.description}}</p>
   <p>${{(projectToDisplay | async)?.goal}}</p>
+  <p>Amount Raised: {{(projectToDisplay | async)?.amountRaised}}</p>
   <div *ngFor="let tier of tiers">
     <p>TIER:</p>
     <p>${{tier.pledge}}</p>
-    <p>{{tier.reward}}</p>
-    <p>{{tier.limit}}</p>
-    <button (click)="beginSellingTier(projectToSellTier, tier.pledge)">Buy!</button>
+    <p>Reward: {{tier.reward}}</p>
+    <p>Amount Left: {{tier.limit}}</p>
+    <p>Key: {{tier.$key}}</p>
+    <button (click)="beginSellingTier(projectToSellTier, tier.$key, tier.pledge)">Buy!</button>
   </div>
 </div>

@@ -33,6 +33,10 @@ export class ProjectService {
     return this.database.object('projects/' + projectId);
   }
 
+  getTierById(projectId: string, tierId: string){
+    return this.database.object('projects/' + projectId + '/tiers/' + tierId);
+  }
+
   updateProject(localUpdatedProject){
     var projectEntryInFirebase = this.getProjectById(localUpdatedProject.$key);
     projectEntryInFirebase.update({name: localUpdatedProject.name,
@@ -46,10 +50,18 @@ export class ProjectService {
                               });
   }
 
-  sellTier(localSoldProject, tierCost: number) {
+  sellTier(localSoldProject, tierToSellKey, tierCost: number) {
     var projectEntryInFirebase = this.getProjectById(localSoldProject.$key);
     var supporters = parseFloat(localSoldProject.supporters) + 1;
     var moneyRaised = parseFloat(localSoldProject.amountRaised) + tierCost;
+    let tierLimit;
+    this.getTierById(localSoldProject.$key, tierToSellKey).subscribe(data => {
+      tierLimit = data.limit;
+      if(tierLimit > 0) {
+        tierLimit -= 1;
+      }
+    })
+    this.getTierById(localSoldProject.$key, tierToSellKey).update({limit: tierLimit});
     projectEntryInFirebase.update({supporters: supporters,
                                   amountRaised: moneyRaised
                               });
@@ -59,6 +71,10 @@ export class ProjectService {
   deleteProject(localProjectToDelete){
     var projectEntryInFirebase = this.getProjectById(localProjectToDelete.$key);
     projectEntryInFirebase.remove();
+  }
+
+  getProjectTiers(projectId: string) {
+    return this.database.list(`projects/${projectId}/tiers`);
   }
 
 }

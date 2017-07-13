@@ -16,7 +16,7 @@ export class ProjectDetailComponent implements OnInit {
   projectId: string;
   projectToDisplay;
   projectToSellTier;
-  tiers: Tier[];
+  tiers;
 
   constructor(private route: ActivatedRoute, private location: Location, private projectService: ProjectService) { }
 
@@ -27,16 +27,19 @@ export class ProjectDetailComponent implements OnInit {
     this.projectToDisplay = this.projectService.getProjectById(this.projectId);
 
     this.projectToDisplay.subscribe(data => {
-      this.tiers = data.tiers;
       this.projectToSellTier = data;
-      // data.tiers.forEach(tier => {
-      //
-      // })
+      // console.log(data.tiers)
+      this.projectService.getProjectTiers(this.projectToSellTier.$key).subscribe(data => this.tiers = data
+      );
+      // for (var i = 0; i < this.tiers.length; i++) {
+      //   if (this.tiers[i].limit == 0) {
+      //     return "No more available!"
+      //   };
+      // }
     });
-    console.log(this.projectToDisplay);
   }
 
-  beginSellingTier(projectToSell, tierPledge){
-    this.projectService.sellTier(projectToSell, parseFloat(tierPledge));
+  beginSellingTier(projectToSell, tierKey, tierPledge){
+    this.projectService.sellTier(projectToSell, tierKey, parseFloat(tierPledge));
   }
 }
