@@ -44,4 +44,10 @@ export class ProjectService {
                                 type: localUpdatedProject.type,
                                 tag: localUpdatedProject.tag                    });
   }
+
+  deleteProject(localProjectToDelete){
+    var projectEntryInFirebase = this.getProjectById(localProjectToDelete.$key);
+    projectEntryInFirebase.remove();
+  }
+
 }
